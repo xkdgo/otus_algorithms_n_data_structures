@@ -1,2 +1,2 @@
-# otus_algorithms_n_data_structures
-homeworks of algorithms and data structures otus.ru
+# Домашние задания курса OTUS Алгоритмы и структуры данных
+2) [«Счастливые билеты»](./hw02_lucky_tickets)
