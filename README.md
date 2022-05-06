@@ -2,3 +2,4 @@
 1) [«Квадрат Гарри Поттера»](https://www.youtube.com/watch?v=KmV3aBHfo5w)
 2) [«Счастливые билеты»](./hw02_lucky_tickets)
 3) [«Степень, Числа Фибоначчи, Простые числа»](./hw03_prime_numbers)
+4) [«Шахматные биты»](./hw04_chess_bits)
