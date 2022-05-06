@@ -14,7 +14,7 @@ import (
 var testdirectory = "testdata"
 
 func TestLowSpeed(t *testing.T) {
-	for i := 0; i < 4; i++ {
+	for i := 0; i < 5; i++ {
 		t.Run(fmt.Sprintf("low speed test %d", i), func(t *testing.T) {
 			inData, err := os.ReadFile(path.Join(testdirectory, fmt.Sprintf("test.%d.in", i)))
 			require.NoError(t, err)
