@@ -48,3 +48,21 @@ func TestCicleFibo(t *testing.T) {
 		})
 	}
 }
+
+func TestMatrixFibo(t *testing.T) {
+	testFiboDirectory := path.Join(testdirectory, "fibo")
+	for i := 0; i < 13; i++ {
+		t.Run(fmt.Sprintf("matrix fibo test %d", i), func(t *testing.T) {
+			inData, err := os.ReadFile(path.Join(testFiboDirectory, fmt.Sprintf("test.%d.in", i)))
+			require.NoError(t, err)
+			digitsN, err := strconv.ParseUint(strings.TrimSpace(string(inData)), 0, 64)
+			require.NoError(t, err)
+			outData, err := os.ReadFile(path.Join(testFiboDirectory, fmt.Sprintf("test.%d.out", i)))
+			require.NoError(t, err)
+			wantResult := strings.TrimSpace(string(outData))
+			require.NoError(t, err)
+			got := FiboMatrix(digitsN)
+			require.Equal(t, wantResult, got.String())
+		})
+	}
+}

@@ -30,3 +30,15 @@ func FiboCicle(N uint64) (res *big.Int) {
 	}
 	return f2
 }
+
+func FiboMatrix(N uint64) (res *big.Int) {
+	if N == 0 {
+		return big.NewInt(0)
+	}
+	if N == 1 {
+		return big.NewInt(1)
+	}
+	m2d := NewMatrix2D(*big.NewInt(1), *big.NewInt(1), *big.NewInt(1), *big.NewInt(0))
+	m2d.Power(N)
+	return &m2d.x12
+}
