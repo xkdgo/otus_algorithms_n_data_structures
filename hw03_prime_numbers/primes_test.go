@@ -15,7 +15,7 @@ var testdirectory = "testdata"
 
 func TestCountPrimesLinear(t *testing.T) {
 	testPrimesDirectory := path.Join(testdirectory, "primes")
-	for i := 0; i < 11; i++ {
+	for i := 0; i < 10; i++ {
 		t.Run(fmt.Sprintf("primes count linear %d", i), func(t *testing.T) {
 			inData, err := os.ReadFile(path.Join(testPrimesDirectory, fmt.Sprintf("test.%d.in", i)))
 			require.NoError(t, err)
