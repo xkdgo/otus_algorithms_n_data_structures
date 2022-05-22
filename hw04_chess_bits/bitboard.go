@@ -1,5 +1,6 @@
 package bitboard
 
+// https://gekomad.github.io/Cinnamon/BitboardCalculator/
 const (
 	noGHMask              = uint64(0x3f3f3f3f3f3f3f3f)
 	noABMask              = uint64(0xfcfcfcfcfcfcfcfc)
