@@ -4,3 +4,6 @@
 3) [«Степень, Числа Фибоначчи, Простые числа»](./hw03_prime_numbers)
 4) [«Шахматные биты»](./hw04_chess_bits)
 5) [«Динамические массивы, неполный массив, очередь с приоритетом»](./hw05_arrays)
+6) [«Простые сортировки BubbleSort, InsertionSort, ShellSort»](./hw06_simple_sorts)
+7) [«Пирамидальная сортировка SelectionSort, HeapSort»](./hw07_heap_sort)
+
