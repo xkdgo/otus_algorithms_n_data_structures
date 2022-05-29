@@ -19,7 +19,7 @@ func TestBubble(t *testing.T) {
 	for _, sort := range []sortFunc{BubbleSort} {
 		for _, dirname := range xtypeData {
 			testNameDirectory := path.Join(testdirectory, dirname)
-			for i := 0; i <= 5; i++ {
+			for i := 0; i <= 4; i++ {
 				t.Run(fmt.Sprintf("%s test on %s data %d", GetFunctionName(sort), GetDirectoryName(dirname), i),
 					func(t *testing.T) {
 						inData, err := os.ReadFile(path.Join(testNameDirectory, fmt.Sprintf("test.%d.in", i)))
