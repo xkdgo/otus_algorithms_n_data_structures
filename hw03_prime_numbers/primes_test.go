@@ -2,11 +2,13 @@ package calculate
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"path"
 	"strconv"
 	"strings"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/require"
 )
@@ -28,7 +30,9 @@ func TestCountPrimesLinear(t *testing.T) {
 			output := strings.TrimSpace(string(outData))
 			wantResult, err := strconv.Atoi(output)
 			require.NoError(t, err)
+			start := time.Now()
 			got := CountPrimesLinear(inDigit)
+			log.Printf("%s N=%d time=%d msecs", "CountPrimesLinear", inDigit, time.Since(start).Milliseconds())
 			require.Equal(t, wantResult, got)
 		})
 	}
@@ -49,7 +53,9 @@ func TestPrimesCountEratosphen(t *testing.T) {
 			output := strings.TrimSpace(string(outData))
 			wantResult, err := strconv.Atoi(output)
 			require.NoError(t, err)
+			start := time.Now()
 			got := EratosphenClassic(inDigit)
+			log.Printf("%s N=%d time=%d msecs", "EratosphenClassic", inDigit, time.Since(start).Milliseconds())
 			require.Equal(t, wantResult, got)
 		})
 	}

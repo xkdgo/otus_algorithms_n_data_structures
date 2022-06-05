@@ -2,11 +2,13 @@ package calculate
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"path"
 	"strconv"
 	"strings"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/require"
 )
@@ -24,7 +26,9 @@ func TestRecursionFibo(t *testing.T) {
 			require.NoError(t, err)
 			wantResult := strings.TrimSpace(string(outData))
 			require.NoError(t, err)
+			start := time.Now()
 			got := FiboRecursion(digitsN)
+			log.Printf("%s N=%d time=%d msecs", "FiboRecursion", digitsN, time.Since(start).Milliseconds())
 			require.Equal(t, wantResult, got.String())
 		})
 	}
@@ -43,7 +47,9 @@ func TestCicleFibo(t *testing.T) {
 			require.NoError(t, err)
 			wantResult := strings.TrimSpace(string(outData))
 			require.NoError(t, err)
+			start := time.Now()
 			got := FiboCicle(digitsN)
+			log.Printf("%s N=%d time=%d msecs", "FiboCicle", digitsN, time.Since(start).Milliseconds())
 			require.Equal(t, wantResult, got.String())
 		})
 	}
@@ -61,7 +67,9 @@ func TestMatrixFibo(t *testing.T) {
 			require.NoError(t, err)
 			wantResult := strings.TrimSpace(string(outData))
 			require.NoError(t, err)
+			start := time.Now()
 			got := FiboMatrix(digitsN)
+			log.Printf("%s N=%d time=%d msecs", "FiboMatrix", digitsN, time.Since(start).Milliseconds())
 			require.Equal(t, wantResult, got.String())
 		})
 	}

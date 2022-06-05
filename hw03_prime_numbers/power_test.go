@@ -2,11 +2,13 @@ package calculate
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"path"
 	"strconv"
 	"strings"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/require"
 )
@@ -30,7 +32,9 @@ func TestStandard(t *testing.T) {
 			output := strings.TrimSpace(string(outData))
 			wantResult, err := strconv.ParseFloat(output, 64)
 			require.NoError(t, err)
+			start := time.Now()
 			got := PowerStandard(x, int(y))
+			log.Printf("%s %f^%d time=%d msecs", "PowerStandard", x, int(y), time.Since(start).Milliseconds())
 			require.Equal(t, fmt.Sprintf("%.6f", wantResult), fmt.Sprintf("%.6f", got))
 		})
 	}
@@ -55,7 +59,9 @@ func TestPowerViaMultiply(t *testing.T) {
 			output := strings.TrimSpace(string(outData))
 			wantResult, err := strconv.ParseFloat(output, 64)
 			require.NoError(t, err)
+			start := time.Now()
 			got := PowerViaMultiply(x, int(y))
+			log.Printf("%s %f^%d time=%d msecs", "PowerViaMultiply", x, int(y), time.Since(start).Milliseconds())
 			require.Equal(t, fmt.Sprintf("%.11f", wantResult), fmt.Sprintf("%.11f", got))
 		})
 	}
@@ -80,7 +86,9 @@ func TestPowerViaPowOfTwo(t *testing.T) {
 			output := strings.TrimSpace(string(outData))
 			wantResult, err := strconv.ParseFloat(output, 64)
 			require.NoError(t, err)
+			start := time.Now()
 			got := PowerViaPowOfTwo(x, int(y))
+			log.Printf("%s %f^%d time=%d msecs", "PowerViaPowOfTwo", x, int(y), time.Since(start).Milliseconds())
 			require.Equal(t, fmt.Sprintf("%.6f", wantResult), fmt.Sprintf("%.6f", got))
 		})
 	}
