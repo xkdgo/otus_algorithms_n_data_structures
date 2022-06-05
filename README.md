@@ -6,4 +6,4 @@
 5) [«Динамические массивы, неполный массив, очередь с приоритетом»](./hw05_arrays)
 6) [«Простые сортировки BubbleSort, InsertionSort, ShellSort»](./hw06_simple_sorts)
 7) [«Пирамидальная сортировка SelectionSort, HeapSort»](./hw07_heap_sort)
-8) [«Быстрая сортировка QuickSort и Сортировка слиянием MergeSort»](./hw08_quick_n_megre_sort)
+8) [«Быстрая сортировка QuickSort и Сортировка слиянием MergeSort»](./hw08_quick_n_merge_sort)
