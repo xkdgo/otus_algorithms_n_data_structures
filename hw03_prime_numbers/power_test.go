@@ -34,7 +34,7 @@ func TestStandard(t *testing.T) {
 			require.NoError(t, err)
 			start := time.Now()
 			got := PowerStandard(x, int(y))
-			log.Printf("%s %f^%d time=%d msecs", "PowerStandard", x, int(y), time.Since(start).Milliseconds())
+			log.Printf("%s %.10f^%d time=%d msecs", "PowerStandard", x, int(y), time.Since(start).Milliseconds())
 			require.Equal(t, fmt.Sprintf("%.6f", wantResult), fmt.Sprintf("%.6f", got))
 		})
 	}
@@ -61,7 +61,7 @@ func TestPowerViaMultiply(t *testing.T) {
 			require.NoError(t, err)
 			start := time.Now()
 			got := PowerViaMultiply(x, int(y))
-			log.Printf("%s %f^%d time=%d msecs", "PowerViaMultiply", x, int(y), time.Since(start).Milliseconds())
+			log.Printf("%s %.10f^%d time=%d msecs", "PowerViaMultiply", x, int(y), time.Since(start).Milliseconds())
 			require.Equal(t, fmt.Sprintf("%.11f", wantResult), fmt.Sprintf("%.11f", got))
 		})
 	}
@@ -88,7 +88,7 @@ func TestPowerViaPowOfTwo(t *testing.T) {
 			require.NoError(t, err)
 			start := time.Now()
 			got := PowerViaPowOfTwo(x, int(y))
-			log.Printf("%s %f^%d time=%d msecs", "PowerViaPowOfTwo", x, int(y), time.Since(start).Milliseconds())
+			log.Printf("%s %.10f^%d time=%d msecs", "PowerViaPowOfTwo", x, int(y), time.Since(start).Milliseconds())
 			require.Equal(t, fmt.Sprintf("%.6f", wantResult), fmt.Sprintf("%.6f", got))
 		})
 	}

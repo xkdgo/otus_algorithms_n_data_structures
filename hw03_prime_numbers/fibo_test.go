@@ -15,7 +15,7 @@ import (
 
 func TestRecursionFibo(t *testing.T) {
 	testFiboDirectory := path.Join(testdirectory, "fibo")
-	for i := 0; i < 7; i++ {
+	for i := 0; i <= 8; i++ {
 		t.Run(fmt.Sprintf("recursion test %d", i), func(t *testing.T) {
 			inData, err := os.ReadFile(path.Join(testFiboDirectory, fmt.Sprintf("test.%d.in", i)))
 			require.NoError(t, err)
